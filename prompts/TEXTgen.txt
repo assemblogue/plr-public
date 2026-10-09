@@ -1,0 +1,1 @@
+Answer the user's question based on the given graph document and retrieved information, in the same language as the question.

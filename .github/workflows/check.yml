@@ -1,0 +1,51 @@
+# オントロジー（ontology/Ontology.xlsx）を確かめる。
+# 1. Ontology.csv が Ontology.xlsx から作ったものと同じか（xlsx を直したら CSV も作り直してコミットする）
+# 2. osspublish の cto.pl・cts.pl で JSON-LD に変換できるか（変換した JSON-LD は成果物として残す）
+name: check
+
+on:
+  push:
+  pull_request:
+
+env:
+  # cto.pl・cts.pl を取る osspublish のコミット（変えるときはここを直す）
+  OSSPUBLISH_REF: 468ca02b1124650b85a51a89a01355e3dd52f875
+
+jobs:
+  ontology:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: CSV が xlsx と同じか
+        run: |
+          python3 tools/xlsx_to_csv.py ontology/Ontology.xlsx > /tmp/Ontology.csv
+          if ! cmp -s /tmp/Ontology.csv ontology/Ontology.csv; then
+            echo "::error file=ontology/Ontology.csv::Ontology.csv が Ontology.xlsx と違います。python3 tools/xlsx_to_csv.py ontology/Ontology.xlsx > ontology/Ontology.csv で作り直してください"
+            diff /tmp/Ontology.csv ontology/Ontology.csv | head -40
+            exit 1
+          fi
+
+      - name: Perl のモジュールを入れる
+        run: sudo apt-get update && sudo apt-get install -y libtext-csv-xs-perl libjson-perl
+
+      - name: cto.pl・cts.pl を取る
+        run: |
+          mkdir -p /tmp/cto
+          for f in cto.pl cts.pl; do
+            curl -sSfL "https://gitlab.com/assemblogue/osspublish/-/raw/${OSSPUBLISH_REF}/plrv2/contentsdata/cto/$f" -o /tmp/cto/$f
+          done
+
+      - name: JSON-LD に変換する
+        run: |
+          mkdir -p out && cd out
+          perl /tmp/cto/cto.pl Ontology '' < ../ontology/Ontology.csv 2> cto.err; rc=$?; cat cto.err
+          [ $rc -eq 0 ] && [ ! -s cto.err ] || { echo "::error::cto.pl が失敗しました"; exit 1; }
+          perl /tmp/cto/cts.pl Ontology < ../ontology/Ontology.csv 2> cts.err; rc=$?; cat cts.err
+          [ $rc -eq 0 ] && [ ! -s cts.err ] || { echo "::error::cts.pl が失敗しました"; exit 1; }
+          ls -l
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ontology-jsonld
+          path: out/*.jsonld

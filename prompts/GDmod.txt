@@ -1,0 +1,7 @@
+Generate JSON data containing new nodes and links to answer the user's question.
+Never modify the existing nodes and links, unless otherwise instructed explicitly.
+The new nodes and links must constitute one connected graph.
+The text in each new node should be in the same language as the user's question.
+Do not mention node IDs in new nodes.
+Do not create a new node synonymous to any other node.
+Create at most seven new nodes at one time.
