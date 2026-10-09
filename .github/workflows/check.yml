@@ -1,5 +1,5 @@
-# オントロジー（ontology/Ontology.xlsx）を確かめる。
-# 1. Ontology.csv が Ontology.xlsx から作ったものと同じか（xlsx を直したら CSV も作り直してコミットする）
+# オントロジー（ontology/ の Ontology.xlsx・Profile.xlsx）を確かめる。
+# 1. 各 CSV が xlsx から作ったものと同じか（xlsx を直したら CSV も作り直してコミットする）
 # 2. osspublish の cto.pl・cts.pl で JSON-LD に変換できるか（変換した JSON-LD は成果物として残す）
 name: check
 
@@ -19,12 +19,16 @@ jobs:
 
       - name: CSV が xlsx と同じか
         run: |
-          python3 tools/xlsx_to_csv.py ontology/Ontology.xlsx > /tmp/Ontology.csv
-          if ! cmp -s /tmp/Ontology.csv ontology/Ontology.csv; then
-            echo "::error file=ontology/Ontology.csv::Ontology.csv が Ontology.xlsx と違います。python3 tools/xlsx_to_csv.py ontology/Ontology.xlsx > ontology/Ontology.csv で作り直してください"
-            diff /tmp/Ontology.csv ontology/Ontology.csv | head -40
-            exit 1
-          fi
+          rc=0
+          for name in Ontology Profile; do
+            python3 tools/xlsx_to_csv.py ontology/$name.xlsx > /tmp/$name.csv
+            if ! cmp -s /tmp/$name.csv ontology/$name.csv; then
+              echo "::error file=ontology/$name.csv::$name.csv が $name.xlsx と違います。python3 tools/xlsx_to_csv.py ontology/$name.xlsx > ontology/$name.csv で作り直してください"
+              diff /tmp/$name.csv ontology/$name.csv | head -40
+              rc=1
+            fi
+          done
+          exit $rc
 
       - name: Perl のモジュールを入れる
         run: sudo apt-get update && sudo apt-get install -y libtext-csv-xs-perl libjson-perl
@@ -39,11 +43,15 @@ jobs:
       - name: JSON-LD に変換する
         run: |
           mkdir -p out && cd out
-          perl /tmp/cto/cto.pl Ontology '' < ../ontology/Ontology.csv 2> cto.err; rc=$?; cat cto.err
-          [ $rc -eq 0 ] && [ ! -s cto.err ] || { echo "::error::cto.pl が失敗しました"; exit 1; }
-          perl /tmp/cto/cts.pl Ontology < ../ontology/Ontology.csv 2> cts.err; rc=$?; cat cts.err
-          [ $rc -eq 0 ] && [ ! -s cts.err ] || { echo "::error::cts.pl が失敗しました"; exit 1; }
+          rc=0
+          for name in Ontology Profile; do
+            perl /tmp/cto/cto.pl $name '' < ../ontology/$name.csv 2> $name.cto.err || rc=1
+            [ -s $name.cto.err ] && { echo "::error::$name: cto.pl のエラー"; cat $name.cto.err; rc=1; }
+            perl /tmp/cto/cts.pl $name < ../ontology/$name.csv 2> $name.cts.err || rc=1
+            [ -s $name.cts.err ] && { echo "::error::$name: cts.pl のエラー"; cat $name.cts.err; rc=1; }
+          done
           ls -l
+          exit $rc
 
       - uses: actions/upload-artifact@v4
         with:

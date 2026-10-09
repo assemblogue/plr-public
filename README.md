@@ -7,6 +7,8 @@ PLR（Personal Life Repository）の公開する資料です。PLR の系のオ�
 ```
 ontology/Ontology.xlsx            系のオントロジー（正本）。シートは1枚
 ontology/Ontology.csv             Ontology.xlsx を CSV にしたもの（差分を読むため）
+ontology/Profile.xlsx             プロフィールのオントロジー（人・氏名・住所・健康など。正本）。シートは1枚
+ontology/Profile.csv              Profile.xlsx を CSV にしたもの
 ontology/spreadsheet_format.md    スプレッドシートによるオントロジーとスタイルシートの書き方
 prompts/GDdef.md                  グラフ文書の定義（ノードと関係の種類）
 prompts/GDconv.md                 文章をグラフ文書に変換する手順
@@ -18,7 +20,7 @@ tools/xlsx_to_csv.py              xlsx の最初のシートを CSV にする
 
 ## オントロジー
 
-`ontology/Ontology.xlsx` が正本です。
+`ontology/Ontology.xlsx`（系のオントロジー）と `ontology/Profile.xlsx`（プロフィールのオントロジー）が正本です。
 
 ### 書き方
 
@@ -30,13 +32,13 @@ tools/xlsx_to_csv.py              xlsx の最初のシートを CSV にする
 
 ### 直すとき
 
-1. `ontology/Ontology.xlsx` を直す
-2. CSV を作り直す：`python3 tools/xlsx_to_csv.py ontology/Ontology.xlsx > ontology/Ontology.csv`
+1. `ontology/` の xlsx を直す
+2. CSV を作り直す：`python3 tools/xlsx_to_csv.py ontology/Ontology.xlsx > ontology/Ontology.csv`（Profile も同じ）
 3. 両方をコミットして、プルリクエストを出す
 
 プルリクエストでは、CI が次を確かめます（`.github/workflows/check.yml`）。
 
-- `Ontology.csv` が `Ontology.xlsx` から作ったものと同じか
+- 各 CSV が xlsx から作ったものと同じか
 - [osspublish](https://gitlab.com/assemblogue/osspublish) の `cto.pl`・`cts.pl` で JSON-LD に変換できるか。変換した JSON-LD は、CI の成果物（ontology-jsonld）としてダウンロードできる
 
 ### PLR に配置する
@@ -45,9 +47,10 @@ osspublish の `osscon-all.jar` で配置します（使い方は osspublish の
 
 ```
 java -jar osscon-all.jar ontology/Ontology.xlsx
+java -jar osscon-all.jar ontology/Profile.xlsx
 ```
 
-配置するのは、タグを付けたコミットの `Ontology.xlsx` にします。
+配置するのは、タグを付けたコミットの xlsx にします。
 
 ## プロンプト
 
