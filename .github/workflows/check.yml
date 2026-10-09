@@ -9,7 +9,7 @@ on:
 
 env:
   # cto.pl・cts.pl を取る osspublish のコミット（変えるときはここを直す）
-  OSSPUBLISH_REF: 468ca02b1124650b85a51a89a01355e3dd52f875
+  OSSPUBLISH_REF: 6b51805f38670719435ca9ddd9e45d16a282c305  # osspublish MR !2（| 属性）。マージされたら dev のコミットに戻す
 
 jobs:
   ontology:
