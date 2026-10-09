@@ -22,6 +22,15 @@ tools/xlsx_to_csv.py              xlsx の最初のシートを CSV にする
 
 `ontology/Ontology.xlsx`（系のオントロジー）と `ontology/Profile.xlsx`（プロフィールのオントロジー）が正本です。
 
+### ダウンロードせずに見る
+
+| | 表として（CSV） | Excel の見た目のまま（Microsoft のオンラインビューア。読むだけ） |
+|---|---|---|
+| Ontology | [Ontology.csv](ontology/Ontology.csv) | [Ontology.xlsx を開く](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/assemblogue/plr-public/main/ontology/Ontology.xlsx) |
+| Profile | [Profile.csv](ontology/Profile.csv) | [Profile.xlsx を開く](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/assemblogue/plr-public/main/ontology/Profile.xlsx) |
+
+CSV は GitHub が表として見せます（セルの色や結合は無い）。CSV は xlsx から作り、CI が一致を確かめているので、中身は xlsx と同じです。
+
 ### 書き方
 
 スプレッドシートでオントロジーとスタイルシートを書く書き方は、`ontology/spreadsheet_format.md` にあります。
