@@ -8,8 +8,8 @@ on:
   pull_request:
 
 env:
-  # cto.pl・cts.pl を取る osspublish のコミット（変えるときはここを直す）
-  OSSPUBLISH_REF: 468ca02b1124650b85a51a89a01355e3dd52f875
+  # cto.pl・cts.pl を取る osspublish（GitHub）のコミット（変えるときはここを直す）
+  OSSPUBLISH_REF: 6b51805f38670719435ca9ddd9e45d16a282c305  # osspublish #1（| 属性）。マージされたら dev のコミットに戻す
 
 jobs:
   ontology:
@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p /tmp/cto
           for f in cto.pl cts.pl; do
-            curl -sSfL "https://gitlab.com/assemblogue/osspublish/-/raw/${OSSPUBLISH_REF}/plrv2/contentsdata/cto/$f" -o /tmp/cto/$f
+            curl -sSfL "https://raw.githubusercontent.com/assemblogue/osspublish/${OSSPUBLISH_REF}/plrv2/contentsdata/cto/$f" -o /tmp/cto/$f
           done
 
       - name: JSON-LD に変換する
