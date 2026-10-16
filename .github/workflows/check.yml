@@ -40,12 +40,11 @@ jobs:
             curl -sSfL "https://gitlab.com/assemblogue/osspublish/-/raw/${OSSPUBLISH_REF}/plrv2/contentsdata/cto/$f" -o /tmp/cto/$f
           done
 
-      # Base は cto.pl が21〜22行目（Channel の行）を読めないので、直すまで変換の対象に入れない
       - name: JSON-LD に変換する
         run: |
           mkdir -p out && cd out
           rc=0
-          for name in Ontology Profile; do
+          for name in Ontology Profile Base; do
             perl /tmp/cto/cto.pl $name '' < ../ontology/$name.csv 2> $name.cto.err || rc=1
             [ -s $name.cto.err ] && { echo "::error::$name: cto.pl のエラー"; cat $name.cto.err; rc=1; }
             perl /tmp/cto/cts.pl $name < ../ontology/$name.csv 2> $name.cts.err || rc=1

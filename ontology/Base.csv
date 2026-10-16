@@ -19,7 +19,7 @@
 "UpdateBegin","\編集するとbeginが更新される",,,
 "Index ja:索引;Index","index(1 ja:検索キー;retrieval key|||[]","string",,
 ,"notificationLeadTime ja:通知リードタイム;notification lead time||ja:事前の通知と事象の間の時間;duration between prior notification and event|[]","duration",,
-"Channel ja:チャネル;Channel","channelSetting",,,
+"Channel","channelSetting",,,
 "_NONE ja:該当なし;zh:不适用;N/A",,,,
 "_UNENTERED ja:未入力;Unentered",,,,
 "OTHER ja:その他;Other|||[%content]","content=1 ja:内容;content","string",,

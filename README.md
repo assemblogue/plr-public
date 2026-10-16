@@ -43,7 +43,7 @@ tools/xlsx_to_csv.py              xlsx の最初のシートを CSV にする
 プルリクエストでは、CI が次を確かめます（`.github/workflows/check.yml`）。
 
 - 各 CSV が xlsx から作ったものと同じか
-- [osspublish](https://gitlab.com/assemblogue/osspublish) の `cto.pl`・`cts.pl` で JSON-LD に変換できるか（Base は、`cto.pl` が Channel の行を読めないので、直すまで対象に入れていない）。変換した JSON-LD は、CI の成果物（ontology-jsonld）としてダウンロードできる
+- [osspublish](https://gitlab.com/assemblogue/osspublish) の `cto.pl`・`cts.pl` で JSON-LD に変換できるか。変換した JSON-LD は、CI の成果物（ontology-jsonld）としてダウンロードできる
 
 ### PLR に配置する
 
