@@ -9,6 +9,8 @@ ontology/Ontology.xlsx            系のオントロジー（正本）。シー�
 ontology/Ontology.csv             Ontology.xlsx を CSV にしたもの（差分を読むため）
 ontology/Profile.xlsx             プロフィールのオントロジー（人・氏名・住所・健康など。正本）。シートは1枚
 ontology/Profile.csv              Profile.xlsx を CSV にしたもの
+ontology/Base.xlsx                PLR の基本のオントロジー（Entity・Event・begin・end・creator など。正本）。シートは1枚
+ontology/Base.csv                 Base.xlsx を CSV にしたもの
 ontology/spreadsheet_format.md    スプレッドシートによるオントロジーとスタイルシートの書き方
 prompts/GDdef.md                  グラフ文書の定義（ノードと関係の種類）
 prompts/GDconv.md                 文章をグラフ文書に変換する手順
@@ -20,7 +22,7 @@ tools/xlsx_to_csv.py              xlsx の最初のシートを CSV にする
 
 ## オントロジー
 
-`ontology/Ontology.xlsx`（系のオントロジー）と `ontology/Profile.xlsx`（プロフィールのオントロジー）が正本です。
+`ontology/Ontology.xlsx`（系のオントロジー）、`ontology/Profile.xlsx`（プロフィールのオントロジー）、`ontology/Base.xlsx`（基本のオントロジー）が正本です。
 
 ダウンロードせずに見るには、[ontology/README.md](ontology/README.md) のリンクから開きます。
 
@@ -41,7 +43,7 @@ tools/xlsx_to_csv.py              xlsx の最初のシートを CSV にする
 プルリクエストでは、CI が次を確かめます（`.github/workflows/check.yml`）。
 
 - 各 CSV が xlsx から作ったものと同じか
-- [osspublish](https://gitlab.com/assemblogue/osspublish) の `cto.pl`・`cts.pl` で JSON-LD に変換できるか。変換した JSON-LD は、CI の成果物（ontology-jsonld）としてダウンロードできる
+- [osspublish](https://gitlab.com/assemblogue/osspublish) の `cto.pl`・`cts.pl` で JSON-LD に変換できるか（Base は、`cto.pl` が Channel の行を読めないので、直すまで対象に入れていない）。変換した JSON-LD は、CI の成果物（ontology-jsonld）としてダウンロードできる
 
 ### PLR に配置する
 
@@ -50,6 +52,7 @@ osspublish の `osscon-all.jar` で配置します（使い方は osspublish の
 ```
 java -jar osscon-all.jar ontology/Ontology.xlsx
 java -jar osscon-all.jar ontology/Profile.xlsx
+java -jar osscon-all.jar ontology/Base.xlsx
 ```
 
 配置するのは、タグを付けたコミットの xlsx にします。
