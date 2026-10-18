@@ -122,7 +122,7 @@
 ,,"Next ja:次;Next",,,,,,,,,,
 ,,"Then then",,,,,,,,,,
 ,,"Else else",,,,,,,,,,
-"refersTo ja:参照;refers to","agent","\existing と同じ意味で向きが逆：refersTo は別ノードに、existing はノード自身に書く（追記R549）",,,,,,,,,,
+"retrieve","agent","\existing と同じ意味で向きが逆：refersTo は別ノードに、existing はノード自身に書く（追記R549）",,,,,,,,,,
 ,"channel",,,,,,,,,,,
 ,"task",,,,,,,,,,,
 ,"taskAgent",,,,,,,,,,,

@@ -32,7 +32,7 @@
 ,"UNENTERED",,,
 ,"_NONE",,,
 ,"_UNENTERED",,,
-"refersTo","retrieve retrieve","arg1",,
+"refersTo ja:参照;refers to","retrieve ja:検索;retrieve","arg1",,
 ,,"arg2",,
 "durationValue(1 ja:持続時間;duration","duration",,,
 ,"duration1hour","duration!PT1H",,
