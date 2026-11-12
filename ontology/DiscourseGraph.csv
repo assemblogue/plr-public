@@ -1,0 +1,452 @@
+"]O DG ja:談話グラフ;Discourse Graph",,,,,,,,,
+"Event","GraphRelation ja:関係;zh:关系;relation",,,,,,,,
+,,,,,,,,,
+,,"PartWhole ja:部分全体関係;part-whole relation","Equal =",,,,,":
+[%1] are equal. One of them may be a summary or elaboration of the other.","ja:
+[%1]は等しい。一方が他方の要約または詳細化のこともある。
+
+[%1この文章は構成が雑で用語も不適切だ。] 要するに[%1悪文だ]。"
+,,,"Elaboration ja:詳細;elaboration",,,,,":
+[%2] is an elaboration of [%1]. [%1] summarizes [%2].","ja:
+[%2]は[%1]の詳細化。[%1]は[%2]の要約。
+
+[%2この文章は構成が雑で用語も不適切だ。] 要するに[%1悪文だ]。"
+,,,"Part ja:部分;pt",,,,,":
+[%2] is part or component of [%1].
+Connect [%2] to [%1] by a ""in"" link if [%1] is a place, time or situation where [%2] occurs, holds, or exists.
+
+[%2the engine] of [%1a car]
+[%1Tom lives in Tokyo.] [%2He usually dines out for dinner.]","ja:
+[%1]が全体で[%2]がその部分または構成素。
+[%2]が生起または成立または存在する場所または時間または状況が[%1]である場合は[%2]から[%1]へのリンクの型を「状況」にする。
+
+[%1車]の[%2エンジン]
+[%1太郎は東京に住んでいる。] [%2夕食はほぼ外食だ。]"
+,,,"ConjSubIssue ja:AND分解;AND Decomp","| linkPath","conjSubIssue",,,,
+,,,"DisjSubIssue ja:OR分解;OR Decomp","| linkPath","disjSubIssue",,,,
+,,,"Member ja:要素;member",,,,,":
+[%2] is a member of set [%1].
+
+","ja:
+[%1]が集合で[%2]がその要素。"
+,,,"Example ja:例;eg",,,,,":
+[%2] is an example of [%1].
+
+[%1I'm forgetful.] [%2Yesterday I forgot my name.] 
+[%1small countries] such as [%2Monaco]","ja:
+[%2]は[%1]の例。
+
+[%1私は忘れっぽい。] [%2昨日は自分の名前を忘れた。]
+[%2モナコ]のような[%1小国]"
+,,,"Extraction ja:特に;extraction",,,,,":
+[%2] is a particular example of [%1].","ja:
+[%2]は[%1]の著しい例。
+
+[%1すばらしい眺めだ。] とりわけ、[%2森はまるで絵のようだ]。"
+,,,"Minimum ja:少なくとも;atLeast",,,,,":
+[%2] is a minimal possibility of [%1].","ja:
+[%2]は[%1]の最小限の可能性。
+
+[%1良い成績を取りたい。] 少なくとも[%2数学は落としたくない]。"
+,,,"Step ja:ステップ;step",,,,,":
+[%2] is a step (or steps) of a process [%1].
+
+[%1Water is circulating.] [%2It falls on the earth as rain or show], and [%2evaporates back to the sky].","ja:
+[%1]がプロセスで[%2]がそのステップまたは手順。
+
+[%1水は循環している。] [%2雨や雪として空から地上に降り、蒸発して空に戻る。]"
+,,"DiscourseRelation ja:談話関係;Discourse Relation","\Additive ja:付加的関係;Additive Relation","PositiveAdditive ja:正付加関係;Positive Additive Relation","Conjunction ja:かつ;and",,,":
+Both of [%1] hold or take place.
+
+[%1The weather was fine], and [%2the wind was cool].","ja:
+[%1]がいずれも成り立つ。
+
+[%1空はよく晴れていた。] そして[%1涼しい風が吹いていた]。"
+,,,,,"Addition ja:また;also",,,":
+[%2] holds in addition to [%1].
+
+[%1Waling is good for your health.] [%2You'd better walk fast.]
+[%1Tom was tired]. Also [%2he was feverish].","ja:
+[%1]に関連して[%2]も成り立つ。
+
+[%1歩くのは健康に良い。] [%2速く歩くことが望ましい。]
+[%1彼はフランス語が得意だ]。[%2ドイツ語もよくできる]。"
+,,,,,"Supplement ja:補充;suppl",,,":
+[%2] provides complementary information on [%1].
+
+[%1The first meeting shall be held on the 16th.] [%2The next one shall be in next month].","ja:
+[%2]は[%1]の補足。
+
+[%1第1回の研究会を16日に開きます。] なお、[%2次回は来月の予定です]。"
+,,,,,"Proportion ja:比例;prop",,,":
+The degree of [%1] is in accordance with that of [%2].
+
+[%2the sooner], [%1the better].","ja:
+[%2]の程度に応じて[%1]の程度が大きい。
+
+[%2早い]ほど[%1良い]。"
+,,,,,"Manner ja:様態;manner",,,":
+[%1] in a manner similar to that of [%2].
+
+[%1She cooks a turkey] as [%2her mother did].
+[%1Do it] exactly as [%2I said].","ja:
+[%2]と同じ様態で[%1]。
+
+[%2寝]て[%1暮らす]"
+,,,,,"Specific ja:具体論;spec",,,":
+[%1] is a general description and [%2] is a specific aspect of it.
+
+[%1My mother works at a hospital.] [%2She is a nurse.]
+[%1I'm not a novelist.] [%2I'm a poet.]","ja:
+[%2]は[%1]の具体化。
+
+[%1母は病院で働いています。] [%2看護士です。]
+[%1私は小説家ではない。] [%2詩人だ。]"
+,,,,,"Content ja:内容;content",,,":
+[%1] is a thinking event, speech event, belief state, somebody thinking or speeking or believing, or document, video, etc. expressing thought, speech, or belief. [%2] is the content of that thought, speech, or belief.
+
+[%1I think] that [%2she is wrong].
+[%1He believes] that [%2the earth revolves around the sun].
+a [%1desire] to [%2get married]
+[%1Tom:] [%2That's great!]","ja:
+[%1]は思考すること、発言すること、信念を持つこと、またはその思考や発言をする者、信念を持つ者、あるいは思考や発言や信念を表わす文書や映像。[%2]はその思考や発言や信念の内容。
+
+[%1その人は言った。] [%2「いつかお目にかかりましたね。」]
+[%2結婚したい]という[%1願望]
+[%2「面白い」]と[%1太郎は思った]。 
+[%1花子:] [%2「おはよう。」]"
+,,,,,"Definition ja:定義;def",,,":
+[%1] is defined as [%2].
+
+[%1To lie] is [%2to tell a false].","ja:
+[%2]が[%1]の定義。
+
+[%1忘却]とは[%2忘れ去ること]なり。"
+,,,,,"Similar ja:類似;similar",,,":
+[%1] are similar to each other.
+
+[%1dance] like [%1a butterfly]","ja:
+[%1]が似ている。
+
+健は[%1奈緒美]ぐらい[%1大きな家に住んでいる]。
+[%1蝶]のように[%1舞う]。"
+,,,,"NegativeAdditive ja:負付加関係;Negative Additive Relation","Contrast ja:対照;contr",,,":
+[%1] are in contrast to each other. Their cooccurrence is neither unlikely nor undesirable, so that they cannot be connected with `despite'.
+
+[%1His hair is white] but [%1his eyes are black].","ja:
+[%1]が対照をなす。[%1]が両立することはありうるまたは両立しても差し支えない。両者を「のに」で結ぶことはできない。
+
+[%1値段が高い。] しかし[%1品質が良い]。
+[%16人がその案に賛成した。] 一方、[%1反対する人は3人だけだった]。"
+,,,,,"Disjunction ja:または;or",,,":
+Either of [%1] holds or take place.
+
+[%1Publish] or [%1perish].
+Unless [%1you're busy], [%1let's go eat].","ja:
+[%1]のいずれかが成り立つ。
+
+[%1思いきって言おうか。] それとも、[%1やはり黙っていようか]。
+[%1彼はうそつきだ]。または[%1無知だ]。
+[%1忙しく]なければ[%1食事に行こう]。"
+,,,,,"Comparison ja:比較;comp",,,":
+The degree of [%1] is more than that of [%2].
+
+[%1Tom swims faster] than [%2Sue walks].","ja:
+[%1]の程度の方が[%2]の程度より大きい。
+
+[%2奈緒美]より[%1立派な家に住んでいる]。"
+,,,,,"LetAlone ja:ましてや;letAlone",,,":
+[%2] is more natural than [%1].
+
+[%1He can't read], let alone [%2write].","ja:
+[%1]より[%2]の方が当然だ。
+
+[%2この問題は兄にも解けない。] まして[%1ぼくにわかるはずがない]。"
+,,,,,"Dissimilar ja:相違;unlike",,,":
+[%1] are dissimilar to each other.
+
+[%1Tom is rich] unlike [%1Sue].","ja:
+[%1]が似ていない。"
+,,,,,"Substitution ja:むしろ;rather",,,":
+[%2] is more appropriate than [%1].
+
+[%1I hate bananas.] Rather [%2I'd like ananas].
+[%1It's no cooler today.] Rather [%2it's hotter].","ja:
+[%1]より[%2]の方が適切である。
+
+[%1今日は体調が悪くない。] むしろ[%2非常に良い]."
+,,,,,"Restriction ja:ただし;though",,,":
+[%2] constrains [%1].
+
+[%1I can come with you] though [%2I must go home by eight].","ja:
+[%2]は[%1]に対する制約。
+
+[%1私はサッカーが好きです。] ただし[%2見るのが好きなんです]。
+[%1もう一度調べる必要がある。] [%2結果はわからない]が。"
+,,,"\Causal ja:因果的関係;Causal Relation","PositiveCausal ja:順接;Positive Causal Relation","Causes ja:引起す;causes",,,":
+[%1] is a cause of a result [%2]. 
+
+[%2Tom passed the exam] because [%1he studied hard].
+[%1Tom studied hard]. So [%2he passed the exam].","ja:
+[%1]が原因で[%2]がその結果。
+
+[%1試験に合格した]。それで[%2入学した]。
+[%2春子は知っていた]。[%1本で読んだことがあった]から。"
+,,,,,"Conclusion ja:だから;hence",,,":
+[%2] is inferred from [%1].
+
+[%2It's raining] because [%1people are putting up ambrellas].
+[%1Tom passed the exam.] [%2Tom must have studied hard.]","ja:
+[%1]が理由で[%2]がその結論。[%1]だから[%2]。
+
+[%1入学した]ということは[%2試験に合格した]な。
+[%1山口君もそこにいた。] だから[%2この話を聞いたはずだ。]"
+,,,,,"Triggers ja:判明;reveals",,,":
+[%1] reveals [%2]. [%1] contains no concrete information of the cause or reason of [%2]. Use ""causes"" if [%1] is a cause of [%2], and ""hence"" if [%1] is a reason for [%2].
+
+[%2The density doulbled] as a result of [%1the experiment].","ja:
+[%1]によって[%2]が判明する。
+[%1]は[%2]の原因に関する具体的な情報を含まない。
+[%1]が[%2]の原因である場合は「引起す」を、理由である場合は「だから」を用いる。
+
+[%1試食してみ]たら[%2なかなか美味い]。
+[%1実験]の結果、[%2両方が同時に地面に落ちた]。"
+,,,,,"Purpose ja:目的;purp",,,":
+[%1] is a means or method for the purpose of [%2]. [%2] may have been achieved.
+
+[%1Tom studied hard] in order to [%2pass the exam].
+[%2Tom passed the exam] by [%1studying hard].","ja:
+[%1]は手段で[%2]はその目的。
+
+[%25時に着きたい。] それには[%13時に家を出なくては]。
+[%2合格する]ため[%1勉強した]。 
+[%1体勢を整えて] [%2反撃する]"
+,,,,,"Enables ja:可能化;enables","\conclusionに含む",,":
+[%1] makes [%2] possible.
+
+[%1Here is a glass of wine]. [%2Drink it].
+[%2Let's have a break] because [%1we have half an hour].","ja:
+[%1]によって[%2]が可能。
+
+[%1冷蔵庫にビールが入っている]から[%2飲んで下さい]。"
+,,,,,"Conditional ja:ならば;cond",,,":
+If [%1] then [%2]. Neither [%1] nor [%2] is known to be true.
+
+If [%1Tom comes here], [%2he'll be surprized].","ja:
+もし[%1]なら[%2]。[%1]も[%2]も本当かどうかわからない。
+
+[%1太郎が女だ]としたら[%2美人だろう]。"
+,,,,,"Foreground ja:背景付与;BGof",,,":
+[%1] provides background information of [%2].
+Namely, [%1] provides a context in which to understand [%2], not any cause or ground of [%2].
+
+[%1John cummutes to Manhattan.] [%2Today he stopped off at Crestwood.]
+[%1I want to travel in August.] [%2Would you join me?]","ja:
+[%1]が[%2]の背景説明。[%1]は[%2]の原因や根拠ではなく、[%2]を理解するための文脈を与える。
+
+[%1太郎は中央線で新宿まで通勤している。] [%2今日は中野で下車した。]
+[%1夏休みには旅行したいと思います。] [%2いっしょに行きませんか。]"
+,,,,,"Explanation ja:説明;explanation",,,":
+[%2] is an explanation of [%1].
+
+[%1Most of the dinosaurs died about 65,000,000 years ago.] [%2Maybe the impact of a big meteorite caused this.]","ja:
+[%2]は[%1]の説明。
+
+[%1朝顔が咲いた。] [%2白い大きな花だ。]
+[%1父は政治家ではありません。] [%2医師です。]"
+,,,,,"Evaluation ja:評価;eval","\approval等を使う",,":
+[%2] is an evaluation of [%1].","ja:
+[%2]は[%1]の評価。
+
+[%1「まかぬ種ははえぬ」という。] [%2そのとおりだ。] (見解付加)"
+,,,,"NegativeCausal ja:逆接;Negative Causal Relation","Conflict ja:しかし;but",,,":
+[%1] are unlikely or undesirable to cooccur.
+
+[%1Tom studied hard] but [%1he failed in the exam].
+[%1Tom failed in the exam] despite [%1his hard work].","ja:
+[%1]が両立しにくいまたは両立すべきでない。
+
+[%1わたしは全力をつくした。] しかし[%1結果は思わしくなかった]。 (時間的前後関係/因果関係があるので非対称)
+[%1太郎は背が高い]のに[%1体重が軽い]。"
+,,,,,"Unconditional ja:によらず;uncond",,,":
+[%2] whether or not [%1]. Use ""Compromize"" if [%1] makes [%2] hard to occur or hold.
+
+[%2I'll go] whether or not [%1it rains].","ja:
+[%1]かどうかによらず[%2]。
+[%1]なら[%2]が生じにくいまたは成立しにくい場合は「であっても」を用いる。
+
+[%1天気が良い]かどうかによらず[%2行く]。"
+,,,,,"Compromise ja:であっても;compro",,,":
+[%2] even if [%1].
+
+[%2I'll go] even if [%1it rains].","ja:
+たとえ[%1]であっても[%2]。
+
+[%1天気が悪く]ても[%2行く]。"
+,,"DialogueAct ja:対話行為;Dialogue Act","Response ja:応答;response",,,,,":
+[%2] is a response to [%1].
+
+[%1Is this the right way to go?] [%2Probably not.]","ja:
+[%2]は[%1]への応答。
+
+[%1「あなたはどなたですか。」] [%2「中村です。」]
+[%1この問題はどのようにして解決されるか。] [%2誠意と努力とによってである。]"
+,,,"Approval ja:はい;yes",,,,,":
+[%2] is a positive response to [%1].
+
+[%1Do you know this?] [%2Sure.]","ja:
+[%2]は[%1]への肯定的応答。
+
+[%1これ知ってる?] [%2もちろん。]"
+,,,"Disapproval ja:いいえ;no",,,,,":
+[%2] is a negative response to [%1].
+
+[%1Give me some money.] [%2I'm too poor.]","ja:
+[%2]は[%1]への否定的応答。
+
+[%1金を出せ。] [%2いやだ。]"
+,,,"Solution ja:解決案;sol.",,,,,":
+[%2] is a proposed solution to [%1]. Use inverse ""Purpose"" when [%1] is not a problem to dissolve but a purpose.
+
+[%1We might be caught by the traffic jam.] [%2Let's go around donwtown.]","ja:
+[%1]は問題で[%2]はその解決案。
+[%1]が解消すべき問題ではなく目的である場合は逆向きの「目的」を用いる。
+
+[%1酒が多すぎる。] [%2皆で飲もう。]"
+,,"TemporalRelation ja:時間関係;Temporal Relation","Before ja:後に;later",,,,,":
+[%1] is temporally followed by [%2].
+
+[%1I arrived] before [%2you came].
+[%2You came] following [%1my arrival].","ja:
+[%1]の後に[%2]。
+
+[%1手紙を書き終えた。] そこへ[%2客が訪ねてきた]。
+[%1食べて]から[%2飲んだ]。"
+,,,"Sametime ja:同時;simul",,,,,":
+[%1] are simultaneous.
+
+[%1Tom finished eating.] At the same time [%1Mary arrived].","ja:
+[%1]が同時。
+
+[%1日が沈む]と同時に[%1雨になった]。"
+,,,"Situation ja:状況;in",,,,,":
+[%2] is a time, place, or situation in which [%1] exists, occurs or holds.
+
+[%1It was raining] when [%2he arrived].
+[%1the earthquake] in [%22011]
+[%1my house] in [%2Tokyo]","ja:
+[%2]は[%1]が存在するまたは生ずるまたは成り立つ時間または場所または状況。
+
+[%2私が生まれた]ころ[%1日本は貧しかった]。
+[%2わたしは坂道をのぼっていた]。[%1道ばたに美しい花が咲いている]。
+[%2窓の外は春雨だ]。[%1わたしはたばこに火をつける]。
+[%22011年]の[%1震災]
+[%2東京]の[%1家]"
+,,"OtherRelation ja:他の関係;Other Relation","Object ja:対象;obj",,,,,":
+[%1] is a state, action, or operation and [%2] is its object or target.
+
+[%2Tom] is [%1a student].
+[%1find] [%2him]
+[%2Mary hit Tom] [%1very hard].
+[%2walk] [%1fast]","ja:
+[%1]は状態または動作で[%2]はその状態にある対象または動作の対象。
+
+[%2太郎]は[%1賢い]。
+[%2車]を[%1買う]。
+[%2太郎を起用した]のは[%1正しかった]。
+[%1速く][%2歩く]
+[%1美味そうに][%2食う]"
+,,,"RefersTo ja:言及;refersTo",,,,,":
+[%1] refers to [%2].","ja:
+[%1]が[%2]に言及する。"
+,,,"Uncertain ?",,,,,":
+The relation between [%1] is uncertain.","ja:
+[%1]の関係が不明。"
+,"Event0 ja:事象;Event","aiModel(1 ja:AIモデル;AI model","string",,,,,,
+,,"Statement ja:言明;Statement","cnt=1",,,,,,
+,,"Issue ja:課題;Issue","cnt=1",,,,,,
+,,,"conjSubIssue ja:and分解;and-decomp","Issue",,,,,
+,,,"disjSubIssue ja:or分解;or-decomp","Issue",,,,,
+,,,"| builtInFunction","issueDecomposition",,,,,
+,,"Question ja:質問;Question","cnt=1",,,,,,
+,,"Entity1 ja:実体;Entity","cnt=1",,,,,,
+,,"Event1 ja:事象;Event","cnt=1",,,,,,
+"Constraint","Issue",,,,,,,,
+"retrieve","conjSubIssue",,,,,,,,
+,"disjunction ja:選言的;disjunctive","disjSubIssue",,,,,,,
+"SymmetricRelation ja:対称関係;Symmetric Relation","arg1)2 ja:第1項;arg1","Entity ja:実体;Entity",,,,,,,
+,"arg2=0  ja:第2項;arg2","Entity",,,,,,,
+,"Conjunction",,,,,,,,
+,"Equal",,,,,,,,
+,"Similar",,,,,,,,
+,"Contrast",,,,,,,,
+,"Disjunction",,,,,,,,
+,"Dissimilar",,,,,,,,
+,"Conflict",,,,,,,,
+,"Sametime",,,,,,,,
+,"Uncertain",,,,,,,,
+"AsymmetricRelation ja:非対称関係;Asymmetric Relation","arg1=1",,,,,,,,
+,"arg2=1",,,,,,,,
+,"Part",,,,,,,,
+,"Member",,,,,,,,
+,"Example",,,,,,,,
+,"Extraction",,,,,,,,
+,"Minimum",,,,,,,,
+,"Step ",,,,,,,,
+,"Conjunction",,,,,,,,
+,"Addition",,,,,,,,
+,"Supplement",,,,,,,,
+,"Proportion",,,,,,,,
+,"Manner",,,,,,,,
+,"Specific",,,,,,,,
+,"Content",,,,,,,,
+,"Definition",,,,,,,,
+,"Comparison",,,,,,,,
+,"LetAlone",,,,,,,,
+,"Substitution",,,,,,,,
+,"Restriction",,,,,,,,
+,"Causes ",,,,,,,,
+,"Conclusion",,,,,,,,
+,"Triggers",,,,,,,,
+,"Purpose",,,,,,,,
+,"Enables",,,,,,,,
+,"Conditional",,,,,,,,
+,"Foreground",,,,,,,,
+,"Explanation",,,,,,,,
+,"Evaluation",,,,,,,,
+,"Unconditional",,,,,,,,
+,"Compromise",,,,,,,,
+,"Response",,,,,,,,
+,"Approval",,,,,,,,
+,"Disapproval",,,,,,,,
+,"Solution",,,,,,,,
+,"Before",,,,,,,,
+,"Situation",,,,,,,,
+,"Object",,,,,,,,
+,"RefersTo",,,,,,,,
+"]R DG ja:談話グラフ;Discourse Graph",,,,,,,,,
+"Elaboration h",,,,,,,,,
+"Additive h",,,,,,,,,
+"Causal h",,,,,,,,,
+"\Member h",,,,,,,,,
+"Extraction h",,,,,,,,,
+"Minimum h",,,,,,,,,
+"Step h",,,,,,,,,
+"Conjunction h",,,,,,,,,
+"Supplement h",,,,,,,,,
+"Proportion h",,,,,,,,,
+"Manner h",,,,,,,,,
+"Definition h",,,,,,,,,
+"Similar h",,,,,,,,,
+"Comparison h",,,,,,,,,
+"LetAlone h",,,,,,,,,
+"Substitution h",,,,,,,,,
+"Constraint h",,,,,,,,,
+"Enables h",,,,,,,,,
+"Explanation h",,,,,,,,,
+"Evaluation h",,,,,,,,,
+"Statement H",,,,,,,,,
+"Issue H",,,,,,,,,
+"Question H",,,,,,,,,
+"Entity1 H",,,,,,,,,
+"Event1 H",,,,,,,,,
